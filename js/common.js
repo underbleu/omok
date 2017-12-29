@@ -79,23 +79,23 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < whiteID.length; i++) {
 
                 // 좌우
-                if (blackID.includes(whiteID[i] + 1) &&
-                    blackID.includes(whiteID[i] + 2) &&
-                    blackID.includes(whiteID[i] + 3) &&
-                    blackID.includes(whiteID[i] + 4)) { alert('좌우 검정 승리!'); return; }
+                if (whiteID.includes(whiteID[i] + 1) &&
+                    whiteID.includes(whiteID[i] + 2) &&
+                    whiteID.includes(whiteID[i] + 3) &&
+                    whiteID.includes(whiteID[i] + 4)) { alert('좌우 검정 승리!'); return; }
 
                 // 상하
-                if (blackID.includes(whiteID[i] + 15) &&     // col
-                    blackID.includes(whiteID[i] + 30) && // col * 2
-                    blackID.includes(whiteID[i] + 45) && // col * 3
-                    blackID.includes(whiteID[i] + 60))   // col * 4
+                if (whiteID.includes(whiteID[i] + 15) &&     // col
+                    whiteID.includes(whiteID[i] + 30) && // col * 2
+                    whiteID.includes(whiteID[i] + 45) && // col * 3
+                    whiteID.includes(whiteID[i] + 60))   // col * 4
                 { alert('상하 검정 승리!'); return; }
 
                 // 대각선
-                if (blackID.includes(whiteID[i] + 16) && // (col + 1) * 1
-                    blackID.includes(whiteID[i] + 32) && // (col + 1) * 2
-                    blackID.includes(whiteID[i] + 48) && // (col + 1) * 3
-                    blackID.includes(whiteID[i] + 64))    // (col + 1) * 4
+                if (whiteID.includes(whiteID[i] + 16) && // (col + 1) * 1
+                    whiteID.includes(whiteID[i] + 32) && // (col + 1) * 2
+                    whiteID.includes(whiteID[i] + 48) && // (col + 1) * 3
+                    whiteID.includes(whiteID[i] + 64))    // (col + 1) * 4
                 { alert('대각선 검정 승리!'); return; }
             } 
         })
