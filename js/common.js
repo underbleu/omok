@@ -19,12 +19,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 return; //여기서 return하여 함수를 종료해줘야지 뒤에 코드 실행안되서, 돌 중복을 막을 수 있다.
             }
             
+            /*
+            `forEach` 메소드가 인덱스를 인자로 넘기므로, 그것을 이용해 `locationXY`를 만들 수 있습니다. 그러면 코드가 조금 더 깔끔해졌을 것 같습니다.
+            예를 들어 아래와 같이 할 수 있습니다.
+            document.querySelectorAll('.row').forEach((rowEl, rowIndex) => {
+                document.querySelectorAll('.col').forEach((colEl, colIndex) => {
+                    ...
+            */
+
             // 좌표 저장
             let locationXY = {x : '', y : ''}; //event함수 내부에 있어야함
             locationXY.x = el.classList[0].split('-')[1];
             locationXY.y = el.closest('.row').classList[0].split('-')[1];
             console.log(locationXY);
                   
+            /*
+            아래 `if...else` 구문 내부에 있는 코드가 중복되어 있습니다.
+            함수를 통해 코드 중복을 제거할 수 있을 것 같습니다.
+            */
             // 흰 검정돌 번갈아 놓기
             if(user === 'black'){
                 el.classList.add('black');
@@ -51,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`whiteID : ${whiteID}`);
                 user = 'black';
             }
-                        
+            /*
+            아래 부분 역시 코드가 중복되어 있어서, 함수를 통해 코드 중복을 제거할 수 있을 것 같습니다.
+            */            
             // 승패 결정
             for(let i = 0; i < blackID.length; i++){
 
